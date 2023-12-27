@@ -81,7 +81,7 @@ class App(Tk):
             return
 
         photos_selected = os.listdir(self.firstFolderName)
-        photos_selected.pop()
+        photos_selected = [file for file in photos_selected if file.lower().endswith('.jpg')]
 
         if not photos_selected:
             messagebox.showinfo("Info", "No photos found in the source folder.")
