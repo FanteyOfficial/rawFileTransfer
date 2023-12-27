@@ -131,6 +131,5 @@ class ProgressBar(Frame):
         self.pb['value'] = value
         self.value_label['text'] = self.update_progress_label()
 
-
 if __name__ == "__main__":
     App().mainloop()
