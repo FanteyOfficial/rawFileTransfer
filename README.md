@@ -5,4 +5,4 @@
 pip install pyinstaller
 pyinstaller --onefile RawFileTransferGUI.py
 ```
-### You can add the ```--noconsole``` attribute but for some reasons antivirus cry
+#### You can add the ```--noconsole``` attribute but for some reasons antivirus will cry
