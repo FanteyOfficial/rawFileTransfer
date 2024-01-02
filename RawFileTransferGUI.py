@@ -80,7 +80,7 @@ class App(Tk):
             messagebox.showerror("Error", "Please select both folders.")
             return
 
-        photos_selected = os.listdir(self.firstFolderName)
+        photos_selected = os.listdir(self.secondFolderName)
         photos_selected = [file for file in photos_selected if file.lower().endswith('.jpg')]
 
         if not photos_selected:
@@ -94,10 +94,7 @@ class App(Tk):
             if index < total_photos:
                 photo = photos_selected[index]
                 try:
-                    shutil.copyfile(
-                        os.path.join(self.firstFolderName, photo),
-                        os.path.join(self.secondFolderName, photo)
-                    )
+                    shutil.copyfile(f'{self.firstFolderName}/{photo[:-4]}.CR2', f'{self.secondFolderName}/{photo[:-4]}.CR2')
                     self.progressBarContainer.update_progress(index + 1)
                 except FileNotFoundError as e:
                     messagebox.showerror(f'{photo} not found', str(e))
